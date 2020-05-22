@@ -1,0 +1,53 @@
+<div class="container-fluid navbarPad">
+  <div class="row" >
+    <nav class="col-md-2 d-none d-md-block bg-dark sidebar" >
+      <div class="sidebar-sticky sticky-top" style="height: 667px;">
+        <ul class="nav flex-column navbarPad" >
+
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/complaints">
+                <span data-feather="check-circle"></span>
+                Complaints
+              </a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" routerLink="/rent">
+              <span data-feather="shopping-bag"></span>
+              Rent
+            </a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" routerLink="/shop">
+              <span data-feather="shopping-cart"></span>
+              Shop
+            </a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" routerLink="/request">
+              <span data-feather="inbox"></span>
+              Request
+            </a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" routerLink="/profile">
+              <span data-feather="users"></span>
+              Profile
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 ">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <div>
+            <app-mainboard></app-mainboard>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

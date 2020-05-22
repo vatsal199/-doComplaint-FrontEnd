@@ -1,0 +1,45 @@
+.topSpace{
+    margin-top: 15px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 10vw;
+  object-fit: cover;
+}
+.modClass{
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left:7%;
+  padding-right:7%;
+}
+
+.editClass{
+  padding-top:4%;
+  padding-bottom:4%;
+  background-color: #c1dfff;
+}
+
+.editClass:hover{
+  background-color: #95c8ff;
+  cursor: pointer;
+}
+
+.editClass:active{
+  background-color: #6ab1ff;
+}
+
+.deleteClass{
+  padding-top:4%;
+  padding-bottom:4%;
+  background-color: #f1bfbe;
+}
+
+.deleteClass:hover{
+  background-color: #eba3a0;
+  cursor: pointer;
+}
+
+.deleteClass:active{
+  background-color: #e38482;
+}

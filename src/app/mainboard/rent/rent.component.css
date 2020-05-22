@@ -1,0 +1,46 @@
+.btnRightpadding{
+  padding-right: 2%;
+}
+
+.btnRightMargin{
+  margin-right: 7px;
+}
+
+.modal-backdrop.fade
+{
+  opacity: 0.5;
+}
+.modal-open .modal
+{
+  opacity: 1;
+}
+
+.custom-file-label{
+  background-color: red;
+}
+
+.custom-file-input{
+  background-color: green;
+}
+
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+
+.fileUploadBtn {
+  background-color: #3796ff;
+  border-color: #3796ff;
+  outline: none;
+  color: #fff;
+}
+
+.fileUploadBtn:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.fileUploadBtn:active {
+  background-color: #0069dd;
+  border-color: #0069dd;
+}

@@ -1,0 +1,53 @@
+
+<div *ngIf="!myView">
+    <div class="d-flex justify-content-end btnRightpadding">
+            <button type="button" class="btn btn-outline-primary" (click)="changeView()">My Items</button>
+    </div>
+    <app-request-all></app-request-all>
+</div>
+<div *ngIf="myView">
+    <div class="d-flex justify-content-end btnRightpadding">
+            <button type="button" class="btn btn-lg btn-primary btnRightMargin" (click)="open(content)">Add</button>
+            <button type="button" class="btn btn-outline-primary" (click)="changeView()">All Items</button>
+    </div>
+    <app-request-my></app-request-my>
+</div>
+
+<!-- <app-rent-my></app-rent-my> -->
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Add Item Details</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    <div class="modal-body">
+            <form #f="ngForm">
+                    <div class="form-group">
+                            <label for="name_id">Name:</label>
+                            <div class="input-group">
+                                    <input id="name_id" ngModel ngbAutofocus class="form-control" placeholder="Name"
+                                            name="title">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="sDesc_id">Short Description:</label>
+                            <div class="input-group">
+                                    <input id="sDesc_id" ngModel class="form-control"
+                                            placeholder="Short Description:" name="sDesc">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="url_id">Image:</label>
+                            <div class="input-group">
+                                    <input id="url_id" ngModel class="form-control" placeholder="Image Url"
+                                            name="url">
+                            </div>
+                    </div>
+            </form>
+    </div>
+    <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close(f)">Save</button>
+    </div>
+</ng-template>

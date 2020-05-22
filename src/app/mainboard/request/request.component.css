@@ -1,0 +1,16 @@
+.btnRightpadding{
+    padding-right: 2%;
+  }
+  
+  .btnRightMargin{
+    margin-right: 7px;
+  }
+  
+  .modal-backdrop.fade
+  {
+    opacity: 0.5;
+  }
+  .modal-open .modal
+  {
+    opacity: 1;
+  }

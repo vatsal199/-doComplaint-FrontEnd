@@ -1,0 +1,111 @@
+<div class="container-fluid">
+        <div class="row topSpace" *ngFor="let oneRow of items">
+                <div class="col-auto" *ngFor="let item of oneRow">
+                        <div class="card" style="width: 13rem;">
+                                <a (click)="open(content,item.id)" class="custom-card">
+                                        <img src="{{ item.imgUrl }}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                                <h5 class="card-title">{{ item.title }}</h5>
+                                                <p class="card-text">{{ item.shortDesc }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                                <strong class="text-muted">Rent: {{ item.rent }}</strong>
+                                        </div>
+                                </a>
+                        </div>
+                </div>
+        </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Product Details</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        <div class="modal-body">
+                <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                                <img style="width:100%;height:350px" src="{{ itemView.imgUrl }}">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                                <div *ngIf="!editView">
+                                        <div class="product-description">
+                                                <span>{{ itemView.title }}</span>
+                                                <h1>{{ itemView.shortDesc }}</h1>
+                                                <p>Description: {{ itemView.description }}</p>
+                                        </div>
+                                
+                                        <!-- Product Configuration -->
+                                        <div class="owner-description">
+                                                <p>Owner: {{ itemView.enrollNo }}</p>
+                                                <p>Mobile No.: {{ itemView.mobilenumber }}</p>
+                                        </div>
+                                
+                                        <!-- Product Pricing -->
+                                        <div class="product-price">
+                                                <span>Rs. {{ itemView.rent }}</span>
+                                        </div>
+                                </div>
+
+                                <form [formGroup]="editForm" *ngIf="editView">
+                                        <div class="modal-body">
+                        
+                                                <div class="form-group">
+                                                        <label for="name_id">Name:</label>
+                                                        <div class="input-group">
+                                                                <input id="name_id" ngbAutofocus class="form-control" placeholder="Name"
+                                                                        formControlName="title">
+                                                        </div>
+                                                </div>
+                                                <div class="form-group">
+                                                        <label for="sDesc_id">Short Description:</label>
+                                                        <div class="input-group">
+                                                                <input id="sDesc_id" class="form-control" placeholder="Short Description"
+                                                                        formControlName="sDesc">
+                                                        </div>
+                                                </div>
+                                                <div class="form-group">
+                                                        <label for="desc_id">Description:</label>
+                                                        <div class="input-group">
+                                                                <textarea id="desc_id" class="form-control" placeholder="Description..."
+                                                                        formControlName="desc"></textarea>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group">
+                                                        <label for="rent">Rent:</label>
+                                                        <div class="input-group">
+                                                                <input id="rent_id" class="form-control" placeholder="Rent"
+                                                                        formControlName="rent">
+                                                        </div>
+                                                </div>
+                                                <div class="form-group">
+                                                        <label for="upload_id">Upload Image:</label>
+                                                        <input type="file" id="hidden_upload_id" formControlName="url" class="file" required
+                                                                (change)="updateFile($event.target.files,filePathView)" #fileUpload>
+                                                        <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                        <span class="input-group-text"><i data-feather="paperclip"></i></span>
+                                                                </div>
+                                                                <input type="text" id="upload_id" class="form-control" disabled
+                                                                        placeholder="Upload File" #filePathView>
+                                                                <div class="input-group-append">
+                                                                        <button class="browse input-group-text fileUploadBtn"
+                                                                                (click)="onBrowseClick(fileUpload)">
+                                                                                Browse</button>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                        
+                                        </div>
+                                </form>
+                        </div>
+                </div>
+        </div>
+        <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" (click)="onEdit(itemView.id)" *ngIf="!editView">Edit</button>
+                <button type="button" class="btn btn-outline-success" (click)="onUpdate(itemView.id)" *ngIf="editView">Update</button>
+                <button type="button" class="btn btn-danger" (click)="onDelete(itemView.id)">Delete</button>
+        </div>
+</ng-template>

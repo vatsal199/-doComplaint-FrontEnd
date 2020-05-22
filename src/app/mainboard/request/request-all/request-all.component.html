@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row topSpace" *ngFor="let oneRow of items">
+        <div class="col-auto" *ngFor="let item of oneRow">
+            <div class="card" style="width: 13rem;">
+                <img src="{{ item.imgUrl }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.title }}</h5>
+                    <p class="card-text">{{ item.shortDesc }}</p>
+                </div>
+                <a (click)="requestPull(item)">
+                    <div class="card-footer text-center">
+                        <!-- <i class="feather-16"data-feather="git-pull-request"></i> -->
+                        Pull
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
