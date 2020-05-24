@@ -14,7 +14,7 @@ node {
 	
     	stage('Build Image') {
 		echo "Generating docker image..."
-        	app = docker.build("vatsal199/doComplaintFront")
+        	app = docker.build("vatsal199/do-complaint-front")
     	}
 
     	stage('Push Image') {
