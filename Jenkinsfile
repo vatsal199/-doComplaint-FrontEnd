@@ -25,4 +25,16 @@ node {
 			}
     	}
 
+		stage('Deploy on Node'){
+    	    step([
+    	        $class:"RundeckNotifier",
+    	        includeRundeckLogs:true,
+    	        jobId: "c7d1a80a-4725-4091-8875-c356aac8b53b",
+    	        rundeckInstance: "RundeckConf",
+    	        shouldFailTheBuild: true,
+    	        shouldWaitForRundeckJob: true,
+    	        tailLog: true
+    	        ])
+    	}
+
 }
