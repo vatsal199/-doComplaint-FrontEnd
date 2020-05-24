@@ -9,7 +9,7 @@ node {
 
 		stage('NPM Build'){
 			sh 'npm install'
-			sh 'ng build --prod --aot'
+			sh 'npm run build'
 		}
 	
     	stage('Build Image') {
