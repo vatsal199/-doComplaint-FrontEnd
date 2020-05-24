@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="profile-img">
+                        <img
+                            src="{{ userDetails.imgUrl  }}" class="img-thumbnail"/>
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file" (change)="photoEdit($event.target.files)"/>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row"><br /></div>
+                <div class="row">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                </div> -->
+            </div>
+            <div class="col-md-8">
+                <div class="profile-tab">
+                    <div class="row">
+                        <div class="profile-head">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row"><br /></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ userDetails.name  }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Roll no</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ userDetails.enrollNo  }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Gender</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ userDetails.gender }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>mobilenumber</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ userDetails.mobilenumber }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Room no</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ userDetails.roomNo }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

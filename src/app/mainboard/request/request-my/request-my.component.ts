@@ -46,7 +46,7 @@ export class RequestMyComponent implements OnInit {
   }
 
   getItems(){
-    let temp:Request[] = this.requestService.getData();
+    let temp:Request[] = this.requestService.getLoadedData();
     let enroll:string = this.authService.getEnrollId();
     let len = temp.length;
     let i = 0;
@@ -85,7 +85,7 @@ export class RequestMyComponent implements OnInit {
     });
 
     this.modalService.open(content,{ariaLabelledBy: 'modal-basic-title',centered: true});
-
+    console.log("Edit request Clicked...");
   }
 
   onUpdate(){

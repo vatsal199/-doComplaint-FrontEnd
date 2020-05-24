@@ -1,0 +1,7 @@
+.signoutBtn{
+    cursor: pointer;
+}
+
+.signoutBtn:hover{
+    color: white;
+}

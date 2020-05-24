@@ -122,6 +122,13 @@ export class RentService {
       }
     }
     this.rentItems.pop();
+    let url = this.domainName+'deleteRent';
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json'
+    });
+    this.http.post(url,{id:id},{headers:headers}).subscribe(
+      (Response) => console.log(Response)
+    );
   }
 
   addData(){

@@ -21,6 +21,7 @@ import { ShopMyComponent } from './mainboard/shop/shop-my/shop-my.component';
 import { RequestComponent } from './mainboard/request/request.component';
 import { RequestAllComponent } from './mainboard/request/request-all/request-all.component';
 import { RequestMyComponent } from './mainboard/request/request-my/request-my.component';
+import { ProfileComponent } from './mainboard/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RequestMyComponent } from './mainboard/request/request-my/request-my.co
     ShopMyComponent,
     RequestComponent,
     RequestAllComponent,
-    RequestMyComponent
+    RequestMyComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

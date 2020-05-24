@@ -29,14 +29,14 @@ export class RequestAllComponent implements OnInit, AfterViewInit {
   }
 
   getItems(){
-      let temp:Request[] = this.requestService.getData();
-      this.setData(temp);
+      // let temp:Request[] = this.requestService.getData();
+      // this.setData(temp);
 
-      // this.requestService.getData().subscribe(
-      //   (response:Request[]) => {
-      //     this.setData(response);
-      //   }
-      // );
+      this.requestService.getData().subscribe(
+        (response:Request[]) => {
+          this.setData(response);
+        }
+      );
   }
 
   setData(data:Request[]){

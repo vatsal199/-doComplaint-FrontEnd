@@ -23,14 +23,14 @@ export class ShopAllComponent implements OnInit {
   }
   
   getItems(){
-    let temp:Shop[] = this.shopService.getData();
-    this.setData(temp);
+    // let temp:Shop[] = this.shopService.getData();
+    // this.setData(temp);
 
-    // this.shopService.getData().subscribe(
-    //   (response:Shop[]) => {
-    //     this.setData(response);
-    //   }
-    // );
+    this.shopService.getData().subscribe(
+      (response:Shop[]) => {
+        this.setData(response);
+      }
+    );
   }
 
   setData(data:Shop[]){

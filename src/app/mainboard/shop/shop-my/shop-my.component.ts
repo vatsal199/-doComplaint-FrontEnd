@@ -51,7 +51,7 @@ export class ShopMyComponent implements OnInit {
   }
 
   getItems(){
-    let temp:Shop[] = this.shopService.getData();
+    let temp:Shop[] = this.shopService.getLoadedData();
     let enroll:string = this.authService.getEnrollId();
     let len = temp.length;
     let i = 0;
