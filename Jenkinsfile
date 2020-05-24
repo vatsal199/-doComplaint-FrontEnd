@@ -6,12 +6,11 @@ node {
 			echo "Poolig git gepository..."
 			git "https://github.com/vatsal199/doComplaint-FrontEnd.git"
     	}
-	stage('NPM Build'){
-		steps {
-		     sh 'npm install'
-		     sh 'ng build --prod --aot'
+
+		stage('NPM Build'){
+			sh 'npm install'
+			sh 'ng build --prod --aot'
 		}
-	}
 	
     	stage('Build Image') {
 		echo "Generating docker image..."
