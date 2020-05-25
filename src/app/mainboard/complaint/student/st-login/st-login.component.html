@@ -1,0 +1,29 @@
+<!-- <html>
+<head>
+    <title>Student Login:: doComplaint</title>
+</head>
+<body>
+<br> -->
+<div style="text-align: center;width:1200px;">
+    <h2 style="color: #555555"> Student Login </h2>
+    <a style="float: right" routerLink="/adlogin"><button class="button">Admin</button></a>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <form>
+        <div style="text-align: center;">{{message}}</div>
+        <br>
+        <input type="text" name="rollnumber" [(ngModel)]="student.rollnumber" placeholder="Enter RollNumber"
+            required="true" />
+        <br>
+        <input type="password" name="password" [(ngModel)]="student.password" placeholder="Enter Password"
+            required="true" />
+        <br>
+        <input type="submit" value="Login" (click)="Login()">
+    </form>
+    <br><br>
+    <!-- <a routerLink = "/stregister"><button class="button">Register</button></a> -->
+</div>
+<!-- </body>
+</html> -->

@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Register:: Student</title>
+</head>
+<body>
+
+<ul>
+    <li><a routerLink = "stlogin">Home</a></li>
+</ul>
+
+
+<div style="text-align: center;">
+    <h2 style="color: #555555"> Student Registration </h2>
+    <form>
+        <div style="color: darkorange">{{message}}</div>
+        <input type = "text" name = "rollnumber" [(ngModel)] = "student.rollnumber" placeholder = "Enter Roll Number" required = "true"/>
+        <br>
+        <input type="text" name = "username" [(ngModel)] = "student.username" placeholder = "Enter Username" required = "true"/>
+        <br>
+        <input type = "password" name = "password" [(ngModel)] = "student.password" placeholder = "Enter Password" required = "true"/>
+        <br>
+        <input type="text" name = "mobilenumber" [(ngModel)] = "student.mobilenumber" placeholder = "Enter Mobile Number" required = "true"/>
+        <br>
+        <input type = "text" name = "roomnumber" [(ngModel)] = "student.roomnumber" placeholder = "Enter Room Number" required = "true"/>
+        <br>
+        <input value = "Register" type="submit" (click) = "register()" />
+
+    </form>
+    <br><br>
+    <a routerLink = "/stlogin"><button class="button">Login</button></a>
+</div>
+</body>
+</html>

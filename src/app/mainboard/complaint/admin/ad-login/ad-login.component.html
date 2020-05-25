@@ -1,0 +1,24 @@
+<!-- <head>
+    <title>Admin Login:: doComplaint</title>
+</head>
+<body>
+<br> -->
+<div style="text-align: center;width:1200px;">
+    <h2 style="color: #555555"> Admin Login </h2>
+    <a style="float: right" routerLink="/stlogin"><button class="button">Student</button></a>
+    <br><br>
+    <br><br>
+    <br><br>
+    <div style="color: darkorange">{{message}}</div>
+    <form>
+        <input type="text" name="username" [(ngModel)]="admin.username" placeholder="Enter Username" required="true" />
+        <br>
+        <input type="password" name="password" [(ngModel)]="admin.password" placeholder="Enter Password"
+            required="true" />
+        <br>
+        <input type="submit" value="Login" (click)="login()">
+    </form>
+    <br><br>
+    <!-- <a routerLink="/adregister"><button class="button">Register</button></a> -->
+</div>
+<!-- </body> -->

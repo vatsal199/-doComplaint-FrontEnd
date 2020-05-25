@@ -5,11 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ComplaintComponent } from './mainboard/complaint/complaint.component';
+import { StComplaintsComponent } from './mainboard/complaint/student/st-complaints/st-complaints.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RentComponent } from './mainboard/rent/rent.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainboardComponent } from './mainboard/mainboard.component';
+import { AdComplaintsComponent } from './mainboard/complaint/admin/ad-complaints/ad-complaints.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RentAllComponent } from './mainboard/rent/rent-all/rent-all.component';
@@ -23,10 +24,14 @@ import { RequestAllComponent } from './mainboard/request/request-all/request-all
 import { RequestMyComponent } from './mainboard/request/request-my/request-my.component';
 import { ProfileComponent } from './mainboard/profile/profile.component';
 
+import { HomeComponent } from './home/home.component';
+import { AdLoginComponent } from './mainboard/complaint/admin/ad-login/ad-login.component';
+import { StLoginComponent } from './mainboard/complaint/student/st-login/st-login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ComplaintComponent,
+    StComplaintsComponent,
     NavbarComponent,
     RentComponent,
     SidebarComponent,
@@ -39,7 +44,11 @@ import { ProfileComponent } from './mainboard/profile/profile.component';
     RequestComponent,
     RequestAllComponent,
     RequestMyComponent,
-    ProfileComponent
+    ProfileComponent,
+    AdComplaintsComponent,
+    HomeComponent,
+    AdLoginComponent,
+    StLoginComponent
   ],
   imports: [
     BrowserModule,
