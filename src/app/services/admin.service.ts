@@ -11,30 +11,32 @@ import { Complaint } from '../mainboard/complaint/Complaint';
 })
 export class AdminService {
 
+  domainName:string = 'http://172.17.0.2:8090/';
+
   constructor(private http: HttpClient) { }
 
   login(admin:Admin)
   {
     console.log(admin.username.toString())
-    return this.http.post("http://localhost:8090/admin/logincheck",admin,{responseType:'text' as 'json'});
+    return this.http.post(this.domainName+"admin/logincheck",admin,{responseType:'text' as 'json'});
   }
 
   register(admin: Admin)
   {
-    return this.http.post("http://localhost:8090/admin/register",admin,{responseType:'text' as 'json'});
+    return this.http.post(this.domainName+"admin/register",admin,{responseType:'text' as 'json'});
   }
 
   getUnresolved()
   {
-    return this.http.get<Complaint[]>("http://localhost:8090/admin/uncomplaints");
+    return this.http.get<Complaint[]>(this.domainName+"admin/uncomplaints");
   }
 
   getAll()
   {
-    return this.http.get<Complaint[]>("http://localhost:8090/admin/allcomplaints");
+    return this.http.get<Complaint[]>(this.domainName+"admin/allcomplaints");
   }
   updateComplaint(complaint:Complaint)
   {
-    return this.http.post("http://localhost:8090/admin/update",complaint,{responseType:'test' as 'json'});
+    return this.http.post(this.domainName+"admin/update",complaint,{responseType:'test' as 'json'});
   }
 }
