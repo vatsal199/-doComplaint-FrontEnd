@@ -7,10 +7,14 @@ import { Profile } from '../models/profile.model';
 export class AuthService {
 
   user:Profile;
-  loggedIn:boolean = true;
+  loggedIn:boolean = false;
 
   constructor() {
       this.addtempData();
+
+      let rollnumber = sessionStorage.getItem("rollnumber");
+      if(rollnumber != "loggedout")
+        this.loggedIn = true;
    }
 
   getUserData(){

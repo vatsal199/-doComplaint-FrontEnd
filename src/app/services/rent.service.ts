@@ -13,6 +13,7 @@ export class RentService {
   private rentItems:Rent[] = [];
   rentItemsObservable = new Subject();
   domainName:string = 'http://172.17.0.2:8090/';
+  //domainName:string = 'http://127.0.0.1:8090/';
 
   constructor(private http:HttpClient) {
       // this.addtempData();

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Complaint } from '../../Complaint';
-import { AdminService } from 'src/app/services/admin.service';
+import { AdminService } from '../../../../services/admin.service';
 import { Router } from '@angular/router';
 
 @Component({

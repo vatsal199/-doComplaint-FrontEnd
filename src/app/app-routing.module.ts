@@ -16,15 +16,15 @@ import { StLoginComponent } from './mainboard/complaint/student/st-login/st-logi
 import { AuthGuardService } from './services/auth-guard.service';
 
 const appRoutes:Routes = [
-    {path:'rent',component:RentComponent},
+    {path:'rent',canActivate:[AuthGuardService],component:RentComponent},
     {path:'shop',canActivate:[AuthGuardService],component:ShopComponent},
     {path:'complaints',canActivate:[AuthGuardService],component:StComplaintsComponent},
-    {path:'adminComplaints',canActivate:[AuthGuardService],component:AdComplaintsComponent},
+    {path:'adminComplaints',component:AdComplaintsComponent},
     {path:'request',canActivate:[AuthGuardService],component:RequestComponent},
     {path:'profile',canActivate:[AuthGuardService],component:ProfileComponent},
-    {path:'adlogin',canActivate:[AuthGuardService],component:AdLoginComponent},
-    {path:'stlogin',canActivate:[AuthGuardService],component:StLoginComponent},
-    {path:'',canActivate:[AuthGuardService],component:HomeComponent},
+    {path:'adlogin',component:AdLoginComponent},
+    {path:'stlogin',component:StLoginComponent},
+    {path:'',component:HomeComponent},
     {path:'**',redirectTo:'rent'}
 ];
 

@@ -31,7 +31,7 @@ export class AdLoginComponent implements OnInit {
       if(this.login_check == "True")
       {
         sessionStorage.setItem("admin_username",this.admin.username.toString());
-        this.router.navigate(['/adcomplaints']);
+        this.router.navigate(['/adminComplaints']);
       }
       else
       {

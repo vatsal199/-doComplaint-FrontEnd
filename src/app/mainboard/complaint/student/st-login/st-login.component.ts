@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../Student';
-import { StudentService } from 'src/app/services/student.service';
+import { StudentService } from '../../../../services/student.service';
+import { AuthService } from '../../../../services/auth.service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +19,8 @@ export class StLoginComponent implements OnInit {
 
   constructor(
     private studentService: StudentService,
-    private router:Router
+    private router:Router,
+    private authService: AuthService
     ) { }
 
   ngOnInit(): void {
@@ -30,7 +33,8 @@ export class StLoginComponent implements OnInit {
       if(this.status == "TRUE")
       {
         sessionStorage.setItem("rollnumber", this.student.rollnumber.toString());
-        this.router.navigate(['stcomplaints'])
+        this.authService.setLogIn();
+        this.router.navigate(['complaints']);
       }
       else
       {
