@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Profile } from '../models/profile.model';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable({
   providedIn: 'root'
@@ -8,13 +9,10 @@ export class AuthService {
 
   user:Profile;
   loggedIn:boolean = false;
+  loadSideBar = new Subject();
 
   constructor() {
       this.addtempData();
-
-      let rollnumber = sessionStorage.getItem("rollnumber");
-      if(rollnumber != "loggedout")
-        this.loggedIn = true;
    }
 
   getUserData(){
@@ -23,10 +21,12 @@ export class AuthService {
 
   setLogOut(){
     this.loggedIn = false;
+    this.loadSideBar.next(false);
   }
 
   setLogIn(){
     this.loggedIn = true;
+    this.loadSideBar.next(true);
   }
 
   isAuthanticated(){

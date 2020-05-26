@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { SharedService } from './shared.service';
 import 'rxjs/Rx';
 
 import { Shop } from '../models/shop.model';
@@ -13,10 +14,11 @@ export class ShopService {
 
   private shoppingItems:Shop[];
   shoppingItemsObservable = new Subject();
-  domainName:string = 'http://172.17.0.2:8090/';
+  domainName:string ;
 
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient,private sharedService:SharedService) {
+    this.domainName = this.sharedService.getDomainName();
     //this.addtempData();
   }
 

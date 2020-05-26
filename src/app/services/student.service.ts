@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { Student } from '../components/student/Student';
+
 import { Student } from '../mainboard/complaint/student/Student';
 import { StudentComplaint } from '../mainboard/complaint/student/StudentComplaint';
-// import { Complaint } from '../components/Complaint';
+import { SharedService } from './shared.service';
 import { Complaint } from '../mainboard/complaint/Complaint';
 
 @Injectable({
@@ -11,10 +11,11 @@ import { Complaint } from '../mainboard/complaint/Complaint';
 })
 export class StudentService {
 
-  domainName:string = 'http://172.17.0.2:8090/';
-  //domainName:string = 'http://127.0.0.1:8090/';
+  domainName:string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private sharedService:SharedService) { 
+    this.domainName = this.sharedService.getDomainName();
+  }
 
   login(student:Student)
   {

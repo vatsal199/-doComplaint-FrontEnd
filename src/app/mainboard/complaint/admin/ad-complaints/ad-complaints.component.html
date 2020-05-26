@@ -2,15 +2,16 @@
     <li><a routerLink="/adcomplaints">Home</a></li>
     <li style="float:right" class="active"><a (click)="logout()">Logout</a></li>
 </ul> -->
-<div style="text-align: center;width:1200px;">
+<app-navbar></app-navbar>
+<div style="text-align: center;">
     <h1>Hello {{admin_username}} </h1>
     <h2>All Complaints Are Below</h2>
 </div>
-<div>
+<div style="padding-left: 1%;padding-top: 1%;">
     <button (click)="changeType()" class="button">Unresolved</button>
     <button (click)="changeType()" class="button">All</button>
 </div>
-<div *ngIf="complaints">
+<div *ngIf="complaints" style="padding:1% 1% 0 1%">
     <table class="center" id="complaints">
         <thead>
             <tr>

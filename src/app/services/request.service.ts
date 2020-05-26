@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/Rx';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { SharedService } from './shared.service';
 
 import { Request } from '../models/request.model';
 import { SMS } from '../models/sms.model';
@@ -14,10 +15,11 @@ export class RequestService {
 
   private requestedItems:Request[];
   requestedItemsObservable = new Subject();
-  domainName:string = 'http://172.17.0.2:8090/';
+  domainName:string ;
 
 
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient,private sharedService:SharedService) { 
+    this.domainName = this.sharedService.getDomainName();
     //this.addtempData(); 
     //this.addData();
   }

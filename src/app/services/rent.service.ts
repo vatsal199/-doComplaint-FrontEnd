@@ -6,16 +6,17 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Rent } from '../models/rent.model';
 import { Observable } from 'rxjs/Rx';
 
+import { SharedService } from './shared.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class RentService {
   private rentItems:Rent[] = [];
   rentItemsObservable = new Subject();
-  domainName:string = 'http://172.17.0.2:8090/';
-  //domainName:string = 'http://127.0.0.1:8090/';
+  domainName:string;
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient,private sharedService:SharedService) {
       // this.addtempData();
       // let url = this.domainName+'getAllRents';
       // //let url = this.domainName+'downloadFile/rent/image.jpg';
@@ -23,6 +24,7 @@ export class RentService {
       //   (response) => console.log(response)
       // );
       //this.addData();
+      this.domainName = this.sharedService.getDomainName();
    }
 
   //  addItem(item:Rent){

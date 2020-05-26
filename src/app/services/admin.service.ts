@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { Admin } from '../components/admin/Admin';
-// import { Complaint } from '../components/Complaint';
+import { SharedService } from './shared.service';
 
 import { Admin } from '../mainboard/complaint/admin/Admin';
 import { Complaint } from '../mainboard/complaint/Complaint';
@@ -11,10 +10,11 @@ import { Complaint } from '../mainboard/complaint/Complaint';
 })
 export class AdminService {
 
-  domainName:string = 'http://172.17.0.2:8090/';
-  //domainName:string = 'http://127.0.0.1:8090/';
+  domainName:string ;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private sharedService:SharedService) { 
+    this.domainName = this.sharedService.getDomainName();
+  }
 
   login(admin:Admin)
   {

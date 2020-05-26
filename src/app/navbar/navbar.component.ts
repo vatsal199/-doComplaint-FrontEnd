@@ -18,21 +18,12 @@ export class NavbarComponent implements OnInit {
   }
 
   onSignOut(){
-    //console.log("Sign out clicked...");
-    if(!(sessionStorage.getItem("rollnumber") === null)){
-      console.log("student logout");
-      sessionStorage.setItem("rollnumber","loggedout");
-    }
-    if(!(sessionStorage.getItem("admin_username") === null)){
-      console.log("admin logout");
-      sessionStorage.setItem("admin_username","loggedout");
-    }
+    console.log("Sign out clicked...");
     sessionStorage.setItem("rollnumber","loggedout");     
     sessionStorage.setItem("admin_username","loggedout");
     this.authService.setLogOut();
-    //console.log(sessionStorage.getItem("rollnumber"));
+    console.log(sessionStorage.getItem("rollnumber"));
     this.router.navigate([""]);
-    //this.authService.setLogOut();
   }
 
 }

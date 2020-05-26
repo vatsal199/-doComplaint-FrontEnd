@@ -1,4 +1,10 @@
-<app-navbar></app-navbar>
-<app-sidebar></app-sidebar>
+<div *ngIf="!studentLoggedIn">
+    <router-outlet></router-outlet>
+</div>
+<div *ngIf="studentLoggedIn">
+    <app-navbar></app-navbar>
+    <app-sidebar></app-sidebar>
+</div>
+
 <!-- <app-trades></app-trades> -->
  <!-- app-complaint></app-complaint> -->
