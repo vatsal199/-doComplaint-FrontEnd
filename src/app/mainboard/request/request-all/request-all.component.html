@@ -7,12 +7,16 @@
                     <h5 class="card-title">{{ item.title }}</h5>
                     <p class="card-text">{{ item.shortDesc }}</p>
                 </div>
-                <a (click)="requestPull(item)">
+                <a (click)="requestPull(item)" *ngIf="!disablePull(item.enrollNo)">
                     <div class="card-footer text-center">
                         <!-- <i class="feather-16"data-feather="git-pull-request"></i> -->
-                        Pull
+                        Accept
                     </div>
                 </a>
+                <div class="card-footer text-center" *ngIf="disablePull(item.enrollNo)">
+                    <!-- <i class="feather-16"data-feather="git-pull-request"></i> -->
+                    Accept
+                </div>
             </div>
         </div>
     </div>

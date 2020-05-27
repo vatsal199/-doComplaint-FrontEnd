@@ -4,7 +4,7 @@ import * as Feather from 'feather-icons';
 import { RequestService } from '../../../services/request.service';
 import { AuthService } from '../../../services/auth.service';
 import { Request } from '../../../models/request.model';
-import { SMS } from '../../../models/sms.model';
+import { Email } from '../../../models/email.model';
 
 @Component({
   selector: 'app-request-all',
@@ -56,18 +56,18 @@ export class RequestAllComponent implements OnInit, AfterViewInit {
 
   requestPull(item:Request){
 
-    let smsDetails : SMS = {
-      senderEnroll : this.authService.getEnrollId(),
-      senderName : this.authService.getName(),
-      senderMobileNo : this.authService.getMobileNumber(),
-
-      recipientEnroll : item.enrollNo,
-      recipientMoNo : item.mobilenumber,
-      itemTitle : item.title,
-      itemSDesc : item.shortDesc
+    let emailDetails : Email = {
+      ownerEnrollNo : this.authService.getEnrollId(),
+      enrollNo : item.enrollNo,
     };
 
-    this.requestService.requestPull(smsDetails);
+    this.requestService.requestPull(emailDetails);
+  }
+
+  disablePull(enrollNo:string):boolean{
+    if(this.authService.getEnrollId() === enrollNo)
+      return true;
+    return false;
   }
 
 }

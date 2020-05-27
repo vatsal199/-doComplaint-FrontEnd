@@ -5,7 +5,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { SharedService } from './shared.service';
 
 import { Request } from '../models/request.model';
-import { SMS } from '../models/sms.model';
+import { Email } from '../models/email.model';
 import { Observable } from 'rxjs/Rx';
 
 @Injectable({
@@ -122,8 +122,15 @@ export class RequestService {
     );
   }
 
-  requestPull(smsDetails: SMS){
-      console.log(smsDetails);
+  requestPull(emailDetails: Email){
+      console.log(emailDetails);
+      let url = this.domainName+'student/pullDemand';
+      const headers = new HttpHeaders({
+        'Content-Type':'application/json'
+      });
+      this.http.post(url,emailDetails,{headers:headers}).subscribe(
+        (Response) => console.log(Response)
+      );
   }
 
   // addtempData(){

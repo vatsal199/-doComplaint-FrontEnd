@@ -45,7 +45,7 @@ export class RentService {
     const headers = new HttpHeaders({
       'Content-Type':'application/json'
     });
-    console.log('Post fired...');
+    //console.log('Post fired...');
     console.log(item);
     this.http.post(url,item,{headers:headers}).subscribe((response:number) => {
         item.id = response;
