@@ -58,7 +58,8 @@ export class ShopComponent implements OnInit {
         imgUrl :this.uploadedImage,
         price : +result.form.value.price,
         enrollNo : this.authService.getEnrollId(),
-        mobilenumber : this.authService.getMobileNumber()
+        mobilenumber : this.authService.getMobileNumber(),
+        name : this.authService.getName()
     };
       //console.log(newItem);
       this.shopService.addItem(newItem);

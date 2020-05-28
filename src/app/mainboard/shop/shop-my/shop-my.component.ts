@@ -127,7 +127,8 @@ export class ShopMyComponent implements OnInit {
       imgUrl : this.editForm.value.url,
       price: +this.editForm.value.price,
       enrollNo: this.itemView.enrollNo,
-      mobilenumber: this.itemView.mobilenumber
+      mobilenumber: this.itemView.mobilenumber,
+      name: this.itemView.name
     };
     //console.log(newItem);
     this.itemView = newItem;

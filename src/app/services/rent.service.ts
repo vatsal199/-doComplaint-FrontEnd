@@ -17,13 +17,6 @@ export class RentService {
   domainName:string;
 
   constructor(private http:HttpClient,private sharedService:SharedService) {
-      // this.addtempData();
-      // let url = this.domainName+'getAllRents';
-      // //let url = this.domainName+'downloadFile/rent/image.jpg';
-      // this.http.get(url).subscribe(
-      //   (response) => console.log(response)
-      // );
-      //this.addData();
       this.domainName = this.sharedService.getDomainName();
    }
 
@@ -72,7 +65,8 @@ export class RentService {
               rent : response[i].rent,
               enrollNo : response[i].rollno,
               mobilenumber : response[i].mobilenumber,
-              imgUrl : response[i].img_url
+              imgUrl : response[i].img_url,
+              name : response[i].username
             };
             //console.log(tempData.imgUrl);
             //console.log(tempData.enrollNo);

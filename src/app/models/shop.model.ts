@@ -7,9 +7,10 @@ export class Shop {
     public price:number;
     public enrollNo:string;
     public mobilenumber: string;
+    public name:string;
 
     constructor(id:number,title:string,shortDesc:string,desc:string,imgUrl:string,rent:number,
-        enrollNo:string,mobilenumber:string){
+        enrollNo:string,mobilenumber:string,name:string){
 
         this.id = id;
         this.title = title;
@@ -19,5 +20,6 @@ export class Shop {
         this.price = rent;
         this.enrollNo = enrollNo;
         this.mobilenumber = mobilenumber;
+        this.name = name;
     }
 }

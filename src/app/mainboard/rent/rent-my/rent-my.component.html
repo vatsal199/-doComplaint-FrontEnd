@@ -9,7 +9,7 @@
                                                 <p class="card-text">{{ item.shortDesc }}</p>
                                         </div>
                                         <div class="card-footer">
-                                                <strong class="text-muted">Rent: {{ item.rent }}</strong>
+                                                <strong class="text-muted">Rent: {{ item.rent }} / day</strong>
                                         </div>
                                 </a>
                         </div>
@@ -39,13 +39,13 @@
                                 
                                         <!-- Product Configuration -->
                                         <div class="owner-description">
-                                                <p>Owner: {{ itemView.enrollNo }}</p>
+                                                <p>Owner: {{ itemView.name }}</p>
                                                 <p>Mobile No.: {{ itemView.mobilenumber }}</p>
                                         </div>
                                 
                                         <!-- Product Pricing -->
                                         <div class="product-price">
-                                                <span>Rs. {{ itemView.rent }}</span>
+                                                <span>Rs. {{ itemView.rent }} / day</span>
                                         </div>
                                 </div>
 
@@ -76,7 +76,7 @@
                                                 <div class="form-group">
                                                         <label for="rent">Rent:</label>
                                                         <div class="input-group">
-                                                                <input id="rent_id" class="form-control" placeholder="Rent"
+                                                                <input id="rent_id" class="form-control" placeholder="Rent per Day"
                                                                         formControlName="rent">
                                                         </div>
                                                 </div>

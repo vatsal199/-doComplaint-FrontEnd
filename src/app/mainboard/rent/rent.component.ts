@@ -59,7 +59,8 @@ export class RentComponent implements OnInit {
               imgUrl :this.uploadedImage,
               rent : +result.form.value.rent,
               enrollNo : this.authService.getEnrollId(),
-              mobilenumber : this.authService.getMobileNumber()
+              mobilenumber : this.authService.getMobileNumber(),
+              name : this.authService.getName()
           };
           //console.log(newItem);
           this.rentService.addItem(newItem);

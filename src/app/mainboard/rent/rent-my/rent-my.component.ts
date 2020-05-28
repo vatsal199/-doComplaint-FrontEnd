@@ -125,7 +125,8 @@ export class RentMyComponent implements OnInit,OnDestroy {
       imgUrl : this.editForm.value.url,
       rent: +this.editForm.value.rent,
       enrollNo: this.itemView.enrollNo,
-      mobilenumber: this.itemView.mobilenumber
+      mobilenumber: this.itemView.mobilenumber,
+      name : this.itemView.name
     };
     //console.log(newItem);
     this.itemView = newItem;

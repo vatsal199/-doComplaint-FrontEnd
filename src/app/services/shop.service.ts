@@ -49,7 +49,7 @@ export class ShopService {
     let url = this.domainName+'getAllSells';
     return this.http.get(url).map(
       (response:any[]) => {
-        // console.log(response);
+        //console.log(response);
         // console.log(response.length);
         // console.log(response[0].imgUrl);
         this.shoppingItems = [];
@@ -62,7 +62,8 @@ export class ShopService {
               price : response[i].sell,
               enrollNo : response[i].rollno,
               mobilenumber : response[i].mobilenumber,
-              imgUrl : response[i].img_url
+              imgUrl : response[i].img_url,
+              name : response[i].username
             };
             this.shoppingItems.push(tempData);
         }
