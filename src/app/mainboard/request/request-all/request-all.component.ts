@@ -59,6 +59,7 @@ export class RequestAllComponent implements OnInit, AfterViewInit {
     let emailDetails : Email = {
       ownerEnrollNo : this.authService.getEnrollId(),
       enrollNo : item.enrollNo,
+      itemId : item.id
     };
 
     this.requestService.requestPull(emailDetails);
