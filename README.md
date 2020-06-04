@@ -1,27 +1,13 @@
 # doComplaint-FrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+This Project is a part of course Software Production Engineering at IIIT Bangalore, India. Project is contributed by Dhruvin Radadiya ( https://github.com/dhruvin32 ), Guarav Dixit (https://github.com/gauravishaandixit) and Devans Somani at IIIT Bangalore.
 
-## Development server
+## Description:
+A website where verified students can request college utilities like electrician services, room cleaning, lift complaints, etc. from college authorities. Apart from this, students can list things to sell and trade among themselves(intra-college) such as books, bikes, etc something they can lend to other students for a fee or for free.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## DevOps Tools used:
+Git, Jenkins, Maven, Mockito, Docker, Rundeck and ELK Stack.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### Databse: MySQL
+#### Backend: Spring Boot
+#### Frontend: Angular
